@@ -1,0 +1,116 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <title>TITLE</title>
+     <meta name="description" content="DESCRIPTION">
+    <link rel="stylesheet" href="PATH">
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+   <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+    #face-hugger{width:500px; height: 500px; background:#565656; overflow: hidden; margin-top: 2%; position: relative;}
+    #features{position: absolute;; z-index: 1; width:500px; height: 500px;}
+    #veil{position: absolute; z-index: 999; width: 304px; height:400px; top: 70px; left:98px; border-radius: 139px;}
+    #veil div{position: absolute; z-index: 10; width:304px; height:257px; border-bottom:10px dashed #FFFFFF; opacity: 0.4; background:#FF0000;}
+    #head{position: absolute; z-index: 900; width: 304px; height: 279px; top: 72px; left: 98px; border-radius: 50%;}
+    .left-part { position: absolute; top: -138px; left: -234px; z-index: 10; width: 400px; height: 296px; border-radius: 50%; background: #323232; transform: rotate(13deg); border-bottom: 14px solid #676767; }
+    .right-part { position: absolute; top: -167px; left: 48px; z-index: 9; width: 400px; height: 277px; border-radius: 50%; background: #323232; transform: rotate(64deg); border-right: 15px solid #676767; }
+    .head-band{width: 120px; height:131px; position: absolute; top: 82px; z-index: 910; left: 190px;}
+    .head-band em{display: block; margin:10px auto -15px auto; width: 4px; height: 40px; border-radius: 50%; background: #ffca00;}
+    .head-band span{display: block; margin:0 auto 0 auto; width:30px; height:30px; border-radius: 50%; background: #ffca00; border-bottom:8px solid #ffb100;}
+    .head-band p{display: block; margin: 0 auto 0 auto; width: 50px; height: 50px; border-radius: 50%; background:#FF0000; border:10px solid #ffca00;}
+    .head-band b{display: block; margin: 0 auto 0 auto; width: 10px; height:10px; border-radius: 50%; background:#ffca00;}
+    .boxed{box-sizing: border-box;}
+    .crop{overflow:hidden;}
+    .half{width:250px; height: 500px; margin:0px; padding:0px; position: relative;}
+    .base-skin{position: absolute; z-index:0; background:#eebb99; height:332px; width:280px; margin:80px 110px 0 110px; -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px; border-radius: 40%   40%   53%  53% /50%  50%  50%  50%; }
+    .shadow{position: absolute; z-index:0; background:#deaa88; height:332px; width:280px; margin-top:80px; margin-left:-140px; -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px; border-radius: 40%   40%   53%  53% /50%  50%  50%  50%;}
+    .pull-left span.eyebrow{display: block; position: absolute; width: 100px; left: 134px; background: none; height: 80px; border-radius: 50%; top: 236px; }
+    .pull-left span.eyebrow:after { display: block; content: ''; position: absolute; width: 100px; z-index: 3; right: -11px; border-radius: 46%; height: 66px; transform: rotate(14deg); border-top: 10px solid #323232; }
+    .pull-right span.eyebrow{display: block; position: absolute; width: 100px; right: 134px; background: none; height: 80px; border-radius: 50%; top: 236px; }
+    .pull-right span.eyebrow:after { display: block; content: ''; position: absolute; width: 100px; z-index: 3; left: -11px; border-radius: 46%; height: 66px; transform: rotate(-14deg); border-top: 10px solid #323232; }
+    /**/
+    .pull-left .eye-wrap{display:block; position: absolute; top:245px; left:149px; border-top:2px solid #deaa88; width:80px; height: 42px; border-radius: 50%;}
+    .pull-right .eye-wrap{display: block; position: absolute; top: 245px; right: 150px; border-top: 2px solid #deaa88; width: 80px; height: 42px; border-radius: 50%; z-index: 2;}
+    .pull-left .eye-wrap .eye-lid{display: block; position: absolute; z-index: 10; top: 0px; border-radius: 50%; width: 100px; border-top: 17px solid #e08b94; height: 51px; transform: rotate(9deg);}
+    .pull-right .eye-wrap .eye-lid{display: block; position: absolute; z-index: 10; top: 0px; left: -20px; border-radius: 50%; width: 100px; border-top: 17px solid #e08b94; height: 51px; transform: rotate(-9deg);}
+    .pull-left .eye-ball{display:block; position: absolute; top:-4px; border:1px solid #323232; z-index: 2; width:90px; height: 40px; background: #FFFFFF; border-radius:50% 50% 44% 81%; left:3px;}
+    .pull-right .eye-ball{display:block; position: absolute; top:-4px; border:1px solid #323232; z-index: 2; width:90px; height: 40px; background: #FFFFFF; border-radius:26% 32% 64% 41%; right:2px;}
+    .pull-left .eye-ball .iris{display: block; background: #733f18; width: 33px; height: 33px; border-radius: 50%; right: 31px; position: absolute; top: 3px;}
+    .pull-right .eye-ball .iris{display: block; background: #733f18; width: 33px; height: 33px; border-radius: 50%; left: 31px; position: absolute; top: 3px;}
+    /**/
+    .oral{display: block; position: absolute; top:305px; left:150px; width:200px; height:100px;}
+    .nose { border: 8px solid #ffca00; width: 40px; height: 40px; position: relative; margin: 8px 0 0 112px; border-radius: 50%; }
+    .nose:after { content: ''; display: block; position: absolute; width: 24px; height: 14px; background: #deaa88; top: 5px; left: -16px; border-radius: 50%; }
+    .mouth{width:70px; position: relative; margin: 0 auto;}
+    .mouth strong { height: 13px; width: 70px; display: block; position: relative; }
+    .mouth strong:after { display: block; content: ''; border-left: 23px solid transparent; border-right: 12px solid transparent; border-bottom: 12px solid #F00; position: absolute; left: 7px; border-bottom-right-radius: 10%; }
+    .mouth strong:before { display: block; content: ''; border-left: 12px solid transparent; border-right: 23px solid transparent; border-bottom: 12px solid #F00; position: absolute; right: 7px; border-bottom-right-radius: 10%; }
+    .mouth span{border-bottom: 14px solid #ff3434; border-radius: 50%; width: 43px; height: 27px; margin: -15px auto 0 auto; display: block;}
+    .mouth em{display: block; position: relative; width:4px; height:4px; border-radius: 2px; background: #F00; margin: 18px auto 0 auto;}
+    .mouth em:before{display: block; content: ''; position: absolute; width:4px; height:4px; background: #F00; border-radius: 2px; top:8px; left:-5px;}
+    .mouth em:after{display: block; content: ''; position: absolute; width:4px; height:4px; background: #F00; border-radius: 2px; top:8px; right:-6px;}
+  </style>
+ </head>
+
+ <body>
+  <div class="center-block" id="face-hugger">
+    <div id="veil" class="crop">
+      <div></div>
+    </div>
+    <div id="head" class="crop">
+      <div class="left-part"></div>
+      <div class="right-part"></div>
+    </div>
+    <div class="head-band">
+      <em></em>
+      <b></b>
+      <span></span>
+      <p></p>
+      <b></b>
+    </div>
+    <div class="base-skin"></div>
+    <div id="features" class="crop">
+      <div class="half pull-left boxed crop">
+        <span class="eyebrow crop"></span>
+        <p class="eye-wrap crop">
+          <span class="eye-lid"></span>
+          <strong class="eye-ball">
+            <span class="iris">
+              <em></em>
+            </span>
+          </strong>
+        </p>
+      </div>
+      <div class="half pull-right boxed crop">
+        <span class="eyebrow crop"></span>
+        <p class="eye-wrap crop">
+          <span class="eye-lid"></span>
+          <strong class="eye-ball">
+            <span class="iris">
+              <em></em>
+            </span>
+          </strong>
+        </p>
+        <div class="shadow"></div>
+      </div>
+      <div class="clearfix">
+    </div>
+    <div class="oral">
+      <div class="nose">
+      </div>
+      <div class="mouth">
+        <strong></strong>
+        <span></span>
+        <em></em>
+      </div>
+    </div>
+  </div>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ </body>
+
+ </html>
