@@ -1,0 +1,126 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <title>One Piece - Luffy - by Cheeknee</title>
+     <meta name="description" content="Pure CSS Art">
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+   <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+    #face-hugger{width:500px; height: 500px; background:#101010; overflow: hidden; margin-top: 2%; position: relative;}
+    #features{position: absolute;; z-index: 1; width:500px; height: 500px;}
+    #strawhat { position: absolute; top: -19px; height: 120px; width: 500px; left: 0; z-index: 900; }
+    #strawhat .top { border-top: 134px solid rgb(255, 227, 0); border-radius: 50%; width: 266px; height: 261px; margin: 67px auto -158px auto; display: block; }
+    #strawhat .band { height: 40px; width: 271px; background: #ff3100; margin: 0px auto 0px auto; border-radius: 50%; }
+    #strawhat .base { border-bottom: 56px solid rgb(255, 227, 0); border-right: 132px solid transparent; border-left: 132px solid transparent; width: 501px; height: 51px; position: relative; margin: -31px auto 0 auto; border-radius: 17%; }
+    #head{position: absolute; z-index: 900; width: 304px; height: 279px; top: 72px; left: 98px; border-radius: 50%;}
+    .left-part { position: absolute; top: -138px; left: -234px; z-index: 10; width: 400px; height: 296px; border-radius: 50%; background: #323232; transform: rotate(13deg); border-bottom: 14px solid #676767; }
+    .right-part { position: absolute; top: -167px; left: 48px; z-index: 9; width: 400px; height: 277px; border-radius: 50%; background: #323232; transform: rotate(64deg); border-right: 15px solid #676767; }
+    .boxed{box-sizing: border-box;}
+    .crop{overflow:hidden;}
+    .half{width:250px; height: 500px; margin:0px; padding:0px; position: relative;}
+    .base-skin { position: absolute; z-index: 0; top: 0; background: #eebb99; height: 282px; width: 250px; margin: 100px 125px 0 125px; -webkit-border-radius: 50%/40% 40% 60% 60%; border-radius: 50%/40% 40% 60% 60%; }
+    .shadow { position: absolute; z-index: 1; background: #deaa88; height: 282px; width: 240px; margin-top: 100px; margin-left: -120px; -webkit-border-radius: 50%; border-radius: 50%/40% 40% 60% 60%; }
+    .pull-left span.eyebrow{display: block; position: absolute; width: 100px; left: 134px; background: none; height: 50px; border-radius: 50%; top: 236px; }
+    .pull-left span.eyebrow:after { display: block; content: ''; position: absolute; width: 100px; top: 11px; z-index: 3; right: -11px; border-radius: 46%; height: 25px; transform: rotate(14deg); border-top: 2px solid #323232; }
+    .pull-right span.eyebrow{display: block; position: absolute; width: 100px; right: 134px; background: none; height: 50px; border-radius: 50%; top: 236px; }
+    .pull-right span.eyebrow:after { display: block; content: ''; position: absolute; width: 100px; top: 11px; z-index: 3; left: -11px; border-radius: 46%; height: 25px; transform: rotate(-14deg); border-top: 2px solid #323232; }
+    /**/
+    .pull-left .eye-wrap{display:block; position: absolute; top:245px; left:149px; width:80px; height: 42px; border-radius: 50%;}
+    .pull-right .eye-wrap{display: block; position: absolute; top: 245px; right: 150px; width: 80px; height: 42px; border-radius: 50%; z-index: 2;}
+    .pull-left .eye-ball { display: block; position: absolute; top: 5px; border-top: 4px solid #ae8a72; border-bottom: 1px solid #ae8a72; z-index: 2; width: 60px; height: 49px; background: #FFFFFF; border-radius: 34% 85% 32% 74%; left: 22px; transform: rotate(-11deg); -moz-transform: rotate(-11deg); -webkit-transform: rotate(-11deg); }
+    .pull-right .eye-ball { display: block; position: absolute; top: 5px; border-top: 4px solid #ae8a72; border-bottom: 1px solid #ae8a72; z-index: 2; width: 60px; height: 49px; background: #FFFFFF; border-radius: 85% 27% 74% 35%; right: 22px; transform: rotate(11deg); -moz-transform: rotate(11deg); -webkit-transform: rotate(11deg); }
+    .pull-left .eye-ball .iris{display: block; background: #733f18; width: 11px; height: 11px; border-radius: 50%; right: 16px; position: absolute; top:12px;}
+    .pull-right .eye-ball .iris{display: block; background: #733f18; width: 11px; height: 11px; border-radius: 50%; left: 16px; position: absolute; top:12px;}
+    /**/
+    .pull-left .ear{position: absolute; top: 212px; left: 99px; width:35px; height: 80px;}
+    .pull-right .ear{position: absolute; top: 212px; right: 99px; width:35px;height:80px; }
+    .pull-left .ear .fin { height: 80px; width: 35px; background: #eebb99;position: absolute; top:0px; right:-10px; border-radius: 59% 62% 53% 69%; z-index: -1; transform: rotate(-24deg); }
+    .pull-right .ear .fin{ height: 80px; width: 35px; background: #eebb99; position: absolute; top: 0px; left: -10px; border-radius: 59% 62% 53% 69%; z-index: -1; transform: rotate(24deg); }
+    .ear .fin:after { position: absolute; content: ''; margin: 6px; height: 60px; width: 25px; border: 1px solid #ce9e7f; border-radius: 59% 62% 53% 69%; }
+    .pull-right .ear .fin:before { position: absolute; content: ''; margin-top: 29px; height: 22px; width: 21px; background: #ce9e7f; border-radius: 59% 62% 53% 69%; }
+    .pull-left .ear .fin:before { position: absolute; content: ''; margin-top: 29px; margin-left: 16px;; height: 22px; width: 21px; background: #ce9e7f; border-radius: 59% 62% 53% 69%; }
+
+    /**/
+    .oral { display: block; position: absolute; top: 237px; left: 50px; width: 400px; height: 130px; z-index: 10; }
+    .scar { display: block; position: absolute; right: 111px; border-right: 1px solid transparent; border-left: 1px solid transparent; border-bottom: 1px solid #333; width: 62px; height: 39px; top: 27px; border-radius: 50%; z-index: 20; transform: rotate(-21deg); }
+    span.scar:before { content: ''; position: absolute; height: 11px; width: 1px; background: #333; top: 30px; right: 14px; transform: rotate(-10deg); }
+    span.scar:after { content: ''; position: absolute; height: 11px; width: 1px; background: #333; top: 33px; left: 23px; transform: rotate(15deg); }
+    .nose { border-top: 61px solid transparent; border-bottom: 5px solid transparent; margin-top: 21px; width: 0; right: 201px; position: absolute; z-index: 10; border-right: 8px solid #333333; }
+    .nose:after { content: ''; display: block; position: absolute; top: -3px; left: 2px; border-top: 3px solid #333; z-index: 10; border-right: 20px solid transparent; border-left: 9px solid transparent; transform: rotate(-25deg); }
+    .mouth { width: 133px; position: relative; margin:59px auto 0 auto; }
+    .mouth strong { height: 64px; width: 136px; display: block; background: #FFF; border-radius: 49% 44% 47% 49%; position: relative; border-bottom: 1px solid #323232; }
+    .mouth strong:after { display: block; content: ''; }
+    .mouth strong:before { display: block; content: ''; width: 152px; height: 36px; background: #eb9; border-radius: 50%; position: absolute; top: -5px; transform: rotate(-3deg); left: -8px; border-right: 80px solid #deaa88; }
+    .mouth strong span { width: 153px; display: block; height: 39px; position: absolute; border-bottom: 1px solid #333; left: -13px; top: 6px; border-radius: 50%; }
+    .hair { position: absolute; width: 260px; height: 251px; top: 125px; left: 120px; z-index: 40; border-top: 25px solid #333; border-radius: 50%; }
+    .hair h1, .hair h2, .hair h3, .hair h4, .hair h5{display:block; position: absolute; top:0px; border-radius: 50%;}
+    .hair h1 { height: 156px; width: 115px; border-right: 26px solid #333; top: -70px; left: 95px; transform: rotate(-26deg); }
+    .hair h2 { height: 149px; width: 101px; border-right: 19px solid #333; top: -51px; left: 131px; transform: rotate(-40deg); }
+    .hair h3 { height: 204px; width: 150px; border-left: 12px solid #333; top: -77px; left: 47px; transform: rotate(45deg); }
+    .hair h4 { height: 179px; width: 145px; border-left: 26px solid #333; top: -70px; left: 54px; transform: rotate(23deg); }
+    .hair h5 { height: 163px; width: 182px; border-right: 56px solid #333; top: -58px; left: 16px; transform: rotate(-34deg); }
+  </style>
+ </head>
+
+ <body>
+   <h1 align="center">One piece - Luffy</h1>
+  <div class="center-block" id="face-hugger">
+    <div class="strawhat" id="strawhat">
+      <div class="top"></div>
+      <div class="band"></div>
+      <div class="base"></div>
+    </div>
+    <div class="hair crop" id="hair">
+      <h1></h1>
+      <h2></h2>
+      <h3></h3>
+      <h4></h4>
+      <h5></h5>
+    </div>
+    <div id="features" class="crop">
+      <div class="half pull-left boxed crop">
+        <span class="eyebrow crop"></span>
+        <div class="eye-wrap">
+          <div class="eye-ball">
+            <span class="iris"></span>
+          </div>
+        </div>
+        <div class="ear crop">
+          <div class="fin"></div>
+        </div>
+      </div>
+      <div class="half crop pull-right boxed crop">
+        <span class="eyebrow crop"></span>
+        <div class="eye-wrap">
+          <div class="eye-ball">
+            <span class="iris"></span>
+          </div>
+        </div>
+        <div class="ear crop">
+          <div class="fin"></div>
+        </div>
+        <div class="shadow"></div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="oral">
+        <div class="nose">
+        </div>
+        <span class="scar"></span>
+        <div class="mouth">
+          <strong class="crop">
+            <span></span>
+          </strong>
+        </div>
+      </div>
+    </div>
+    <div class="base-skin" id="face-shape">
+    </div>
+  </div>
+ </body>
+
+ </html>
