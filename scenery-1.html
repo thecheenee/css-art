@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scenery - by Cheeknee</title>
+    <meta name="description" content="Pure CSS Art">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+<script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <style type="text/css">
+        body{background: #eeeeee;}
+        #frame{width:500px; height: 500px; background:#FFFFFF; overflow: hidden; margin-top: 2%; position: relative;}
+        .layer0, .layer1, .layer2{width:500px; height: 500px; position: absolute; top:0; left: 0;}
+        .layer0{z-index: 0;}
+        .layer1{z-index: 5;}
+        .layer2{z-index: 10;}
+        .cloud{position: absolute; z-index: 1; overflow: hidden;}
+        .cloud p.balls{position: absolute; background: inherit; width:60px; height: 60px; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%;}
+        .cloud p.balls.large{width:120px; height: 120px;}
+        .cloud p.balls.small{width:30px; height: 30px;}
+
+        .mountain{position: relative; height: 350px; width:100%;}
+        .sea{position: relative; height: 150px; width: 100%; background:#43aad4;}
+
+        /*IDS*/
+        #sky{background: skyblue; position: relative; top:0; left:0; width:100%; padding-top:100%; height: auto;}
+        #cld1{top:10px; left:10px; width:262px; height: 128px;}
+        #cld1 p{background: #EEEEEE;}
+        #cld2{top: 15px; left: 67px; width: 262px; height: 128px; transform: rotateY(180deg); zoom: 1.5;}
+        #cld2 p{background: #FFFFFF;}
+    </style>
+</head>
+
+<body>
+    <h1 align="center">Scenery</h1>
+    <div class="center-block" id="frame">
+        <div class="layer2"></div>
+        <div class="layer1">
+            <div class="mountain"></div>
+            <div class="sea"></div>
+        </div>
+        <div class="layer0">
+            <div id="sky">
+                <div class="cloud" id="cld1">
+                    <p class="balls" style="top: 83px;left:40px;"></p>
+                    <p class="balls large" style="top: 19px;left: 78px;"></p>
+                    <p class="balls small" style="top: 106px;left: 27px;"></p>
+                    <p class="balls" style="top: 104px;left: 83px;"></p>
+                    <p class="balls large" style="top: 57px;left: 114px;"></p>
+                    <p class="balls small" style="top: 115px;left: 1px;"></p>
+                    <p class="balls small" style="top: 118px;left: 228px;"></p>
+                </div>
+                <div class="cloud" id="cld2">
+                    <p class="balls" style="top: 83px;left:40px;"></p>
+                    <p class="balls large" style="top: 19px;left: 48px;"></p>
+                    <p class="balls small" style="top: 106px;left: 27px;"></p>
+                    <p class="balls" style="top: 104px;left: 83px;"></p>
+                    <p class="balls large" style="top: 57px;left: 114px;"></p>
+                    <p class="balls small" style="top: 115px;left: 1px;"></p>
+                    <p class="balls small" style="top: 118px;left: 228px;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
