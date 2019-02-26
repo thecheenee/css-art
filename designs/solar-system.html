@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>The Solar System by Cheeknee</title>
+	<meta name="description" content="Solar System created with CSS">
+	<style type="text/css">
+	#wrapper{width:800px; height:800px; margin:0 auto; background:#10071f; display:flex; position:relative; -webkit-box-align: center; align-items: center; overflow:hidden;}
+	.revolution, .clicker, .object{border-radius:50%; -webkit-border-radius:50%; position:absolute; transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out; -moz-transition:all 0.5s ease-in-out;}
+	.revolution{border-top:1px solid #444444; border-left:1px solid #444444;}
+	.object{box-shadow:inset 2px 2px 2px #000000a8;}
+	.element{margin:0 auto; position:absolute; width:100%; height:100%; left:0; top:0;}
+	.element.highlit .revolution{border:1px solid #CCCCCC;}
+	.element.highlit .object{transform:scale(1.3); -webkit-transform:scale(1.3); -moz-transform:scale(1.3);}
+	@keyframes revolve{
+		0%{-webkit-transform: rotate(0deg);}
+		100%{-webkit-transform: rotate(360deg);}
+	}
+	@-webkit-keyframes revolve{
+		0%{-webkit-transform: rotate(0deg);}
+		100%{-webkit-transform: rotate(360deg);}
+	}
+	#mappers{z-index:20;}
+	#sun .object, .clicker[data-id=sun]{width:70px; height:70px; z-index:11; background:#FFFFFF; position:absolute; top:365px; left:365px; border:1px solid #FFFF00; box-shadow:0px 0px 17px #ffa900;}
+	#mercury .object{width:5px; height:5px; background:brown; left:12px; top:12px;}
+	#mercury .revolution, .clicker[data-id=mercury]{width:100px; height:100px; z-index:9; margin:0 auto; top:350px; left:350px;}
+	#mercury .revolution{animation: revolve 2.41s linear infinite; -webkit-animation: revolve 2.41s linear infinite;}
+	#venus .object{width:10px; height:10px; background:orange; left:15px; top:15px;}
+	#venus .revolution, .clicker[data-id=venus]{width:140px; height:140px; margin:0 auto; z-index:8; top:330px; left:330px;transform:rotate(30deg); -webkit-transform:rotate(30deg); -moz-transform:rotate(30deg);}
+	#venus .revolution{animation: revolve 6.15s linear infinite; -webkit-animation: revolve 6.15s linear infinite;}
+	#earth .object{width:10px; height:10px; background:#00a7b1; left:24px; top:24px;}
+	#earth .revolution, .clicker[data-id=earth]{width:200px; height:200px; margin:0 auto; z-index:7; top:300px; left:300px; transform:rotate(90deg); -webkit-transform:rotate(90deg); -moz-transform:rotate(90deg);}
+	#earth .revolution{animation: revolve 10s linear infinite; -webkit-animation: revolve 10s linear infinite;}
+	#mars .object{width:7px; height:7px; background:red; left:37px; top:37px;}
+	#mars .revolution, .clicker[data-id=mars]{width:280px; height:280px; margin:0 auto; z-index:6; top:260px; left:260px;}
+	#mars .revolution{animation: revolve 18.799s linear infinite; -webkit-animation: revolve 18.799s linear infinite;}
+	#jupiter .object{width:40px; height:40px; background:#ffdaab; left:59px; top:59px;}
+	#jupiter .revolution, .clicker[data-id=jupiter]{width:500px; height:500px; margin:0 auto; z-index:5; top:150px; left:150px; transform:rotate(270deg); -webkit-transform:rotate(270deg); -moz-transform:rotate(270deg);}
+	#jupiter .revolution{animation: revolve 119s linear infinite; -webkit-animation: revolve 119s linear infinite;}
+	#saturn .object{width:35px; height:35px; background:white; left:70px; top:70px;transform:rotate(30deg); -webkit-transform:rotate(30deg); -moz-transform:rotate(30deg);}
+	#saturn .object:after{content: ''; position: absolute; top: -27px; left: -15px; width: 58px; height: 49px; border-right: 11px solid grey; border-top: 19px solid grey; border-bottom: 19px solid grey; border-left: 4px solid transparent; border-radius: 50%; -webkit-border-radius: 50%; transform: rotateY(74deg) rotateX(7deg); }
+	#saturn .revolution, .clicker[data-id=saturn]{width:600px; height:600px; margin:0 auto; z-index:4; top:100px; left:100px;}
+	#saturn .revolution{animation: revolve 294s linear infinite; -webkit-animation: revolve 294s linear infinite;}
+	#uranus .object{width:30px; height:30px; background:#00a3bf; left:86px; top:86px;}
+	#uranus .revolution, .clicker[data-id=uranus]{width:700px; height:700px; margin:0 auto; z-index:3; top:50px; left:50px; transform:rotate(210deg); -webkit-transform:rotate(210deg); -moz-transform:rotate(210deg);}
+	#uranus .revolution{animation: revolve 837s linear infinite; -webkit-animation: revolve 837s linear infinite;}
+	#neptune .object{width:30px; height:30px; background:#00e6ff; left:98px; top:98px;}
+	#neptune .revolution, .clicker[data-id=neptune]{width:780px; height:780px; margin:0 auto; z-index:2; top:10px; left:10px; transform:rotate(180deg); -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg);}
+	#uranus .revolution{animation: revolve 1637s linear infinite; -webkit-animation: revolve 837s linear infinite;}
+	.clicker:hover{background:rgb(155,155,155,0.1);
+	
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="element" id="mappers">
+			<div class="clicker" data-id="sun"></div>
+			<div class="clicker" data-id="mercury"></div>
+			<div class="clicker" data-id="venus"></div>
+			<div class="clicker" data-id="earth"></div>
+			<div class="clicker" data-id="mars"></div>
+			<div class="clicker" data-id="jupiter"></div>
+			<div class="clicker" data-id="saturn"></div>
+			<div class="clicker" data-id="uranus"></div>
+			<div class="clicker" data-id="neptune"></div>
+		</div>
+		<div class="element" id="sun">
+			<div class="object"></div>
+		</div>
+		<div class="element" id="mercury">
+			<div class="revolution">
+				<div class="object"></div>
+			</div>
+		</div>
+		<div class="element" id="venus">
+			<div class="revolution">
+				<div class="object"></div>
+			</div>
+		</div>
+		<div class="element" id="earth">
+			<div class="revolution">
+				<div class="object"></div>
+			</div>
+		</div>
+		<div class="element" id="mars">
+			<div class="revolution">
+				<div class="object"></div>
+			</div>
+		</div>
+		<div class="element" id="asteroidbelt">
+			<div class="revolution">
+				<div class="object"></div>
+			</div>
+		</div>
+		<div class="element" id="jupiter">
+			<div class="revolution">
+				<div class="object"></div>
+			</div>
+		</div>
+		<div class="element" id="saturn">
+			<div class="revolution">
+				<div class="object"></div>
+			</div>
+		</div>
+		<div class="element" id="uranus">
+			<div class="revolution">
+				<div class="object"></div>
+			</div>
+		</div>
+		<div class="element" id="neptune">
+			<div class="revolution">
+				<div class="object"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var clickerObj = document.querySelectorAll('.clicker');
+		
+		
+		
+		for(var i=0; i<clickerObj.length; i++) {
+			clickerObj[i].addEventListener("click", function(){
+				console.log(this.getAttribute('data-id'));
+			});
+		}
+	</script>
+</body>
