@@ -1,0 +1,115 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Devotional - by Cheeknee</title>
+	<meta name="description" content="Pure CSS Art"><!--[if lt IE 9]>
+	<script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style type="text/css">
+		.wrapper{margin:0 auto; width:500px; height:500px; background-image:linear-gradient(to right, blue, black); position:relative; padding:0px 0; box-sizing: border-box;}
+		.front-wrapper{position:absolute; width:200px; height:auto; top:0; left:150px; z-index:1;}
+		.hair-back{position:absolute; width:200px; height:auto; top:220px; left:160px; z-index:0;}
+		.hair-wrapper{position:relative; width:200px; height:auto; margin:0 auto; text-align:center;}
+		.bun{background-image:radial-gradient(#000000, #0f0f0f, #5f5e5e 116%); border-radius:50%; display:inline-block; position:relative; overflow:hidden;}
+		.bun:after{position:absolute; content:''; background-image:radial-gradient(#000000, #030303, #0f0f0f 116%); width:50%; right:0; top:0; padding-top:100%;}
+		.level1{width:80px; height:80px;}
+		.level2{width:120px; height:110px; margin-top:-20px;}
+		.level3{width:180px; height:170px; margin-top:-70px;}
+		.level4{width: 180px; height: 120px; margin: -110px auto 0 auto;}
+		.moon{display:block; position: absolute; top:-30px; right:30px; z-index:10; width:50px; height:50px; border-left:10px solid #CCCCCC; transform:rotate(-44deg); -webkit-transform:rotate(-44deg); -moz-transform:rotate(-44deg); border-radius:50%;}
+		.face-wrapper{position:relative; width:140px; height:180px; margin:-110px auto 0 auto; border-radius:46% 48% 116% 74%; overflow:hidden;}
+		.skin{position:relative; width:140px; height:180px; background:#ffe0bd; border-radius:28% 29% 45% 74%;}
+		.face-wrapper:after{position:absolute; content:''; background:#eac086; opacity:0.7; filter: alpha(opacity=70); width:50%; right:0; top:0; height:200px;}
+		.face-container{position:absolute; top:0; left:0; width:140px; height:180px; z-index:2;}
+		.hair-crop{width:100%; height:20px; overflow:hidden; position:relative; background:#000000;}
+		.hair-crop:after, .hair-crop:before{position:relative; content:''; width:50%; height:20px; float:left;}
+		.hair-crop:after{background: #f0ca97; border-top-left-radius: 50%;}
+		.hair-crop:before{background: #ffe0bd; border-top-right-radius: 50%;}
+		.mark{width:80%; margin:0px auto 0 auto; height:30px; border-bottom:10px solid #FFFFFF; position:relative; border-radius:10%;}
+		.mark:before{content:''; position:absolute; top:0; width:100%; height:35px; border-top:10px solid #FFFFFF; border-radius:10%;}
+		.mark:after{content:''; position:absolute; top:15px; width:100%; height:35px; border-top:10px solid #FFFFFF; border-radius:10%;}
+		.eye-wrapper, .eyes-wrapper{position:relative;}
+		.eyes-wrapper{width: 120px; height: 50px; margin: -6px auto 0 auto; display: grid; grid-template-columns: 45% 45%; grid-gap: 10%;}
+		.third.eye-wrapper{width:40px; height:60px; margin:0 auto;}
+		.third.eye{transform: rotate(71deg) translateX(-5px) translateY(15px); transform-origin: center center;}
+		.eye{width: 50px; height: 38px; overflow:hidden; border-top: 1px solid #000000; border-left: 2px solid transparent; border-radius: 50% 50% 10% 10%; position: absolute; z-index: 2;}
+		.eyelid{width: 60px; height: 15px; background: #b3b3f5; position:absolute; z-index:2; transform: rotate(18deg) translateX(7px) translateY(-4px); border-bottom: 1px solid #787890; box-shadow: inset 10px 9px 16px #4f4f79;}
+		.iris{width: 60px; height: 53px; background: #FFFFFF; border-radius: 50% 50% 10% 10%; transform: rotate(191deg) translateX(1px) translateY(34px); border-top: 1px solid #000000;}
+		#lefteye{transform: rotate(16deg) translateX(0px); border-radius: 50%; height: 41px; width: 60px; padding: 7px 0px 15px 0px; background: #ffe0bd; border-top: 5px solid #000000; border-right: 5px solid transparent; box-sizing: border-box;}
+		#lefteye .eye-wrapper{transform:rotate(-29deg) translateX(-5px);}
+		#righteye{transform: rotate(-20deg) translateX(-4px) translateY(-3px); border-radius: 50%; height: 41px; width: 60px; padding: 0px 0px 0px 0px; border-top: 5px solid #000000; border-left: 5px solid transparent; box-sizing: border-box; background: #f0ca97;}
+		#righteye .eye-wrapper{position: absolute; top: 9px; left: -8px; transform:rotate(-4deg);}
+		.nose{position:relative; margin:20px auto 0 auto; width:0; height:0; border-top:10px solid #f0ca97; border-right:15px solid transparent; border-left:15px solid transparent;}
+		.mouth{position:relative; margin:0 auto; width:40px; height:20px;}
+		.upperlip{width:40px; height:5px; position:relative;}
+		.upperlip:before{position:absolute; content:''; top:0; left:0; border-bottom:5px solid #965130; border-right:5px solid transparent; border-left:17px solid transparent;}
+		.upperlip:after{position:absolute; content:''; top:0; right:0; border-bottom:5px solid #965130; border-right:17px solid transparent; border-left:5px solid transparent;}
+		.lowerlip{border-bottom:9px solid #c16c43; width:70%; margin:-10px auto 0 auto; border-top:9px solid transparent; border-radius:50%;}
+		.ears{display:grid; grid-template-columns:20% 60% 20%;}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="front-wrapper">
+			<div class="hair-wrapper">
+				<p class="moon"></p>
+				<div class="bun level1">
+				</div>
+				<div class="bun level2"></div>
+				<div class="bun level3"></div>
+			</div>
+			<div class="face-wrapper">
+				<div class="face-container">
+					<div class="hair-crop"></div>
+					<div class="mark">
+						<div class="third eye-wrapper">
+							<div class="third eye">
+								<div class="eyelid"></div>
+								<div class="iris"></div>
+							</div>
+						</div>
+					</div>
+					<div class="eyes-wrapper">
+						<div id="lefteye">
+							<div class="eye-wrapper">
+								<div class="eye">
+									<div class="eyelid"></div>
+									<div class="iris"></div>
+								</div>
+							</div>
+						</div>
+						<div id="righteye">
+							<div class="eye-wrapper">
+								<div class="eye">
+									<div class="eyelid"></div>
+									<div class="iris"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="nose"></div>
+					<div class="mouth">
+						<div class="upperlip"></div>
+						<div class="lowerlip"></div>
+					</div>
+				</div>
+				<div class="skin"></div>
+			</div>
+		</div>
+		<div class="hair-back">
+			<div class="ears">
+				<div>
+					<div class="ear" id="left"></div>
+				</div>
+				<div></div>
+				<div>
+					<div class="ear" id="right"></div>
+				</div>
+			</div>
+			<div class="bun level3"></div>
+			<div class="bun level4"></div>
+		</div>
+	</div>
+</body>
