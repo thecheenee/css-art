@@ -8,11 +8,12 @@
 	<script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<style type="text/css">
-		.wrapper{margin:0 auto; width:500px; height:500px; background-image:linear-gradient(to right, blue, black); position:relative; padding:0; box-sizing: border-box;}
+		.wrapper{margin:0 auto; width:500px; height:500px; overflow: hidden; filter:grayscale(50%); background-image:linear-gradient(to right, blue, black); position:relative; padding:0; box-sizing: border-box;}
 		/* body parts placeholders */
-		.head{position:absolute; width:200px; height:auto; top:20px; left:150px; z-index:3;}
-		.body{position:absolute; width:500px; height:auto; top:270px; left:0px; z-index:2;}
-		.hair-back{position:absolute; width:200px; height:auto; top:240px; left:150px; z-index:1;}
+		.head{position:absolute; width:200px; height:auto; top:20px; left:150px; z-index:2;}
+		.body{position:absolute; width:500px; height:auto; top:260px; left:0px; z-index:1;}
+		.hair-back{position:absolute; width:200px; height:auto; top:240px; left:150px; z-index:0;}
+		.trident{position: absolute; width:300px; height:auto; bottom:0; right:0; z-index: 3;}
 		
 		/* hair styles */
 		.hair-wrapper{position:relative; width:200px; height:auto; margin:0 auto; text-align:center;}
@@ -74,6 +75,15 @@
 		#bluespot:after{position:absolute; content:''; top:0; left:0; width: 20px; height: 10px; background: #9898d4; box-shadow: 0 0 15px #9898d4; border-radius: 50%;}
 		.shoulders{border-bottom:50px solid #f0ca97; border-left:150px solid transparent; border-right:150px solid transparent; width:0; height:0; position:absolute; bottom:-32px; left:100px;}
 		
+		/* trident */
+		#tr{transform:rotate(18deg) translateX(10px);}
+		.spear{display:block; position: relative; margin:0 auto; width:300px; height:400px;}
+		.spear:before{content: ''; position: absolute; width: 160px; height: 174px; top: 0; left: 0; border-left:14px solid #b8b8b8; border-radius: 50%; transform: rotate(-29deg) translateX(72px) translateY(24px); border-bottom: 10px solid transparent;}
+		.spear:after{content: ''; position: absolute; width: 160px; height: 174px; top: 0; right: 0; border-right: 14px solid #787878; border-radius: 50%; transform: rotate(29deg) translateX(-72px) translateY(20px); border-bottom: 10px solid transparent;}
+		.blade{display:block; position: relative; margin:0 auto; width:40px; height:150px; border-bottom:13px solid #787890; overflow: hidden; border-radius: 16%;}
+		.blade:after{display:block; content:''; position: absolute; border-right:20px solid #b8b8b8; border-top:120px solid transparent; border-bottom:50px solid transparent; top:0; left:0;}
+		.blade:before{display:block; content:''; position: absolute; border-left:20px solid #787878; border-top:120px solid transparent; border-bottom:50px solid transparent; top:0; right:0;}
+		.rod{display:block; position: relative; margin:0 auto; width:20px; height:250px; background:#5f5e5e;}
 	</style>
 </head>
 <body>
@@ -171,6 +181,12 @@
 			<div class="hair-wrapper">
 				<div class="bun level3"></div>
 				<div class="bun level4"></div>
+			</div>
+		</div>
+		<div class="trident" id="tr">
+			<div class="spear">
+				<div class="blade"></div>
+				<div class="rod"></div>
 			</div>
 		</div>
 	</div>
