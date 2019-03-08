@@ -8,17 +8,27 @@
 	<script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<style type="text/css">
-		.wrapper{margin:0 auto; width:500px; height:500px; background-image:linear-gradient(to right, blue, black); position:relative; padding:0px 0; box-sizing: border-box;}
-		.front-wrapper{position:absolute; width:200px; height:auto; top:0; left:150px; z-index:1;}
-		.hair-back{position:absolute; width:200px; height:auto; top:220px; left:160px; z-index:0;}
+		.wrapper{margin:0 auto; width:500px; height:500px; background-image:linear-gradient(to right, blue, black); position:relative; padding:0; box-sizing: border-box;}
+		/* body parts placeholders */
+		.head{position:absolute; width:200px; height:auto; top:0; left:150px; z-index:3;}
+		.body{position:absolute; width:200px; height:auto; top:250px; left:150px; z-index:2;}
+		.hair-back{position:absolute; width:200px; height:auto; top:220px; left:150px; z-index:1;}
+		
+		/* hair styles */
 		.hair-wrapper{position:relative; width:200px; height:auto; margin:0 auto; text-align:center;}
 		.bun{background-image:radial-gradient(#000000, #0f0f0f, #5f5e5e 116%); border-radius:50%; display:inline-block; position:relative; overflow:hidden;}
 		.bun:after{position:absolute; content:''; background-image:radial-gradient(#000000, #030303, #0f0f0f 116%); width:50%; right:0; top:0; padding-top:100%;}
+		.beads{display:block; position:absolute; width:100%; z-index:3; text-align:center;}
+		.beads p{display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #c55d00; box-shadow: inset -3px 0px 1px #5d2c00; margin: 4px 0; padding: 0;}
 		.level1{width:80px; height:80px;}
 		.level2{width:120px; height:110px; margin-top:-20px;}
 		.level3{width:180px; height:170px; margin-top:-70px;}
 		.level4{width: 180px; height: 120px; margin: -110px auto 0 auto;}
 		.moon{display:block; position: absolute; top:-30px; right:30px; z-index:10; width:50px; height:50px; border-left:10px solid #CCCCCC; transform:rotate(-44deg); -webkit-transform:rotate(-44deg); -moz-transform:rotate(-44deg); border-radius:50%;}
+		.l1{top:60px;}
+		.l2{top:111px;}
+		
+		/* face */
 		.face-wrapper{position:relative; width:140px; height:180px; margin:-110px auto 0 auto; border-radius:46% 48% 116% 74%; overflow:hidden;}
 		.skin{position:relative; width:140px; height:180px; background:#ffe0bd; border-radius:28% 29% 45% 74%;}
 		.face-wrapper:after{position:absolute; content:''; background:#eac086; opacity:0.7; filter: alpha(opacity=70); width:50%; right:0; top:0; height:200px;}
@@ -34,7 +44,7 @@
 		.eyes-wrapper{width: 120px; height: 50px; margin: -6px auto 0 auto; display: grid; grid-template-columns: 45% 45%; grid-gap: 10%;}
 		.third.eye-wrapper{width:40px; height:60px; margin:0 auto;}
 		.third.eye{transform: rotate(71deg) translateX(-5px) translateY(15px); transform-origin: center center;}
-		.eye{width: 50px; height: 38px; overflow:hidden; border-top: 1px solid #000000; border-left: 2px solid transparent; border-radius: 50% 50% 10% 10%; position: absolute; z-index: 2;}
+		.eye{width: 50px; height: 38px; overflow:hidden; border-left: 2px solid transparent; border-radius: 50% 50% 10% 10%; position: absolute; z-index: 2;}
 		.eyelid{width: 60px; height: 15px; background: #b3b3f5; position:absolute; z-index:2; transform: rotate(18deg) translateX(7px) translateY(-4px); border-bottom: 1px solid #787890; box-shadow: inset 10px 9px 16px #4f4f79;}
 		.iris{width: 60px; height: 53px; background: #FFFFFF; border-radius: 50% 50% 10% 10%; transform: rotate(191deg) translateX(1px) translateY(34px); border-top: 1px solid #000000;}
 		#lefteye{transform: rotate(16deg) translateX(0px); border-radius: 50%; height: 41px; width: 60px; padding: 7px 0px 15px 0px; background: #ffe0bd; border-top: 5px solid #000000; border-right: 5px solid transparent; box-sizing: border-box;}
@@ -47,15 +57,34 @@
 		.upperlip:before{position:absolute; content:''; top:0; left:0; border-bottom:5px solid #965130; border-right:5px solid transparent; border-left:17px solid transparent;}
 		.upperlip:after{position:absolute; content:''; top:0; right:0; border-bottom:5px solid #965130; border-right:17px solid transparent; border-left:5px solid transparent;}
 		.lowerlip{border-bottom:9px solid #c16c43; width:70%; margin:-10px auto 0 auto; border-top:9px solid transparent; border-radius:50%;}
-		.ears{display:grid; grid-template-columns:20% 60% 20%;}
+		.ears{display:grid; position:absolute; top:10px; left:0; grid-template-columns:30px 140px 30px; height:50px; z-index:3;}
+		.ear{width: 25px; height: 40px; background: #f0ca97; border-radius: 28% 126% 37% 136%; transform: rotate(1deg); position:relative; margin-left: 10px;}
+		.ear:before{position: absolute; bottom: -3px; content: ''; right: 1px; height: 10px; width: 10px; border-radius: 50%; background: #CCCCCC; box-shadow: inset -4px 1px 2px #828282; z-index:1;}
+		.ear:after{position: absolute; bottom: -25px; content: ''; right: -4px; height: 20px; width: 20px; border-radius: 50%; border: 4px solid #cccccc; z-index: 0;}
+		#right{transform:rotateY(180deg) translate(15px);}
+		
+		/* body */
+		.neck{border-bottom: 141px solid #f0ca97; border-left: 27px solid transparent; border-right: 28px solid transparent; height: 0; width: 39px; position: relative; margin: 0 auto; }
+		.neck:before{position: absolute; content: ''; top: 12px; left: -80px; width: 56px; height: 135px; border-right: 23px solid #f0ca97; border-radius: 50%; transform: rotate(-2deg); }
+		.neck:after{position: absolute; content: ''; top: 12px; right: -80px; width: 56px; height: 135px; border-left: 23px solid #f0ca97; border-radius: 50%; transform: rotate(2deg);}
+		#bluespot{position: absolute; top: 100px; left: 12px; width: 20px; height: 10px; background: #9898d4; box-shadow: 0 0 18px #9898d4; border-radius: 50%;}
+		#bluespot:before{position:absolute; content:''; top:0; left:0; width: 20px; height: 10px; background: #9898d4; box-shadow: 0 0 10px #9898d4; border-radius: 50%;}
+		#bluespot:after{position:absolute; content:''; top:0; left:0; width: 20px; height: 10px; background: #9898d4; box-shadow: 0 0 15px #9898d4; border-radius: 50%;}
+		
 	</style>
 </head>
 <body>
 	<div class="wrapper">
-		<div class="front-wrapper">
+		<div class="head">
 			<div class="hair-wrapper">
 				<p class="moon"></p>
-				<div class="bun level1">
+				<div class="bun level1"></div>
+				<div class="beads l1">
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
 				</div>
 				<div class="bun level2"></div>
 				<div class="bun level3"></div>
@@ -98,6 +127,21 @@
 				<div class="skin"></div>
 			</div>
 		</div>
+		<div class="body">
+			<div class="beads l2">
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+				<p></p>
+			</div>
+			<div class="neck">
+				<div id="bluespot"></div>
+			</div>
+		</div>
 		<div class="hair-back">
 			<div class="ears">
 				<div>
@@ -108,8 +152,10 @@
 					<div class="ear" id="right"></div>
 				</div>
 			</div>
-			<div class="bun level3"></div>
-			<div class="bun level4"></div>
+			<div class="hair-wrapper">
+				<div class="bun level3"></div>
+				<div class="bun level4"></div>
+			</div>
 		</div>
 	</div>
 </body>
